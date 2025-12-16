@@ -41,9 +41,9 @@
     <string name="about_view_source_code"><![CDATA[View source code at %1$s<br/>Join our %2$s channel]]></string>
     <string name="translators" comment="Dear translators, please add your home page here following the format. There can be more than one translator. So feel free to append yourself.">null</string>
     <string name="install">Install</string>
-    <string name="install_summary">Tap to install LSPosed</string>
+    <string name="install_summary">Tap to install LSPosed Next</string>
     <string name="not_installed">Not installed</string>
-    <string name="not_install_summary">LSPosed is not Installed</string>
+    <string name="not_install_summary">LSPosed Next is not installed</string>
     <string name="activated">Activated</string>
     <string name="partial_activated">Partially activated</string>
     <string name="selinux_policy_not_loaded_summary">SEPolicy is not loaded properly</string>
@@ -53,7 +53,7 @@
     <string name="system_prop_incorrect_summary">System prop incorrect</string>
     <string name="system_prop_incorrect"><![CDATA[Some necessary system properties deleted or modified.<br/>Modules may invalidate occasionally.]]></string>
     <string name="need_update">Need to update</string>
-    <string name="please_update_summary">Please install the latest version of LSPosed</string>
+    <string name="please_update_summary">Please install the latest version of LSPosed Next</string>
     <string name="developer_warning_title">Tips for module developer</string>
     <string name="developer_warning_summary">Please disable deploy optimizations on Android Studio, or use `gradlew installDebug` command to install. Otherwise the module apk will not be updated.</string>
     <string name="info_api_version">API version</string>
@@ -72,17 +72,17 @@
     <string name="mount_failed">Mount failed</string>
     <string name="selinux_permissive">SELinux is permissive</string>
     <string name="sepolicy_incorrect">SELinux policy is incorrect</string>
-    <string name="update_lsposed">Update LSPosed</string>
-    <string name="update_lsposed_msg">Confirm to update LSPosed? This device will reboot after update completion</string>
+    <string name="update_lsposed">Update LSPosed Next</string>
+    <string name="update_lsposed_msg">Confirm to update LSPosed Next? This device will reboot after update completion</string>
     <string name="info_copied">Copied to clipboard</string>
     <!-- WelcomeDialog -->
-    <string name="parasitic_welcome">Welcome to LSPosed</string>
+    <string name="parasitic_welcome">Welcome to LSPosed Next</string>
     <string name="parasitic_welcome_summary">You are using the parasitic manager, which can create shortcut or still open from notification.</string>
     <string name="parasitic_welcome_summary_no_shortcut_support">You are using the parasitic manager, which can open from notification.</string>
     <string name="create_shortcut">Create shortcut</string>
     <string name="never_show">Never show</string>
     <string name="app_welcome">Parasitic Manager Recommended</string>
-    <string name="app_welcome_summary">LSPosed now supports system parasitization to avoid detection, you can open parasitic manager from notification. It is recommended to uninstall the current application.</string>
+    <string name="app_welcome_summary">LSPosed Next supports system parasitization to avoid detection; you can open the parasitic manager from notification. It is recommended to uninstall the current application.</string>
     <!-- LogsActivity -->
     <string name="menuSaveToSd">Save</string>
     <string name="nav_item_logs_verbose">Verbose Logs</string>

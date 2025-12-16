@@ -1,6 +1,6 @@
 {
-	"version": "v1.10.2",
-	"versionCode": 7182,
-	"zipUrl": "https://github.com/JingMatrix/LSPosed/releases/download/v1.10.2/LSPosed-v1.10.2-7182-zygisk-release.zip",
-	"changelog": "https://raw.githubusercontent.com/JingMatrix/LSPosed/master/magisk-loader/update/changelog.md"
+	"version": "v2.0.0-next",
+	"versionCode": 22999,
+	"zipUrl": "https://github.com/F1xGOD/LSPosed-Next/releases/download/v2.0.0-next/LSPosed-Next-v2.0.0-next-22999-zygisk-release.zip",
+	"changelog": "https://raw.githubusercontent.com/F1xGOD/LSPosed-Next/master/magisk-loader/update/changelog.md"
 }

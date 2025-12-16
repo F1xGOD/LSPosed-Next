@@ -28,9 +28,9 @@ plugins {
     alias(libs.plugins.lsplugin.resopt)
 }
 
-val moduleName = "LSPosed"
+val moduleName = "LSPosed-Next"
 val moduleBaseId = "lsposed"
-val authors = "JingMatrix & LSPosed Developers"
+val authors = "F1xGOD"
 
 val injectedPackageName: String by rootProject.extra
 val injectedPackageUid: Int by rootProject.extra
@@ -145,9 +145,9 @@ fun afterEval() = android.applicationVariants.forEach { variant ->
                 "versionName" to "v$verName",
                 "versionCode" to verCode,
                 "authorList" to authors,
-                "updateJson" to "https://raw.githubusercontent.com/JingMatrix/LSPosed/master/magisk-loader/update/${flavorLowered}.json",
+                "updateJson" to "https://raw.githubusercontent.com/F1xGOD/LSPosed-Next/master/magisk-loader/update/${flavorLowered}.json",
                 "requirement" to when (flavorLowered) {
-                    "zygisk" -> "Requires Magisk 26.0+ and Zygisk enabled"
+                    "zygisk" -> "Requires Magisk 26.0+ / KernelSU Next (20000+) with Zygisk/ksud enabled"
                     else -> "No further requirements"
                 },
                 "api" to flavorCapped,

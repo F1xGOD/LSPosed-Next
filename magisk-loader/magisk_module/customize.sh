@@ -35,7 +35,7 @@ enforce_install_from_magisk_app() {
 }
 
 VERSION=$(grep_prop version "${TMPDIR}/module.prop")
-ui_print "- LSPosed version ${VERSION}"
+ui_print "- LSPosed Next version ${VERSION}"
 
 # Extract verify.sh
 ui_print "- Extracting verify.sh"
@@ -54,6 +54,7 @@ extract "$ZIPFILE" 'verify.sh' "$TMPDIR"
 extract "$ZIPFILE" 'util_functions.sh' "$TMPDIR"
 . "$TMPDIR/util_functions.sh"
 check_android_version
+check_kernel_su_version
 if [ -z "$KSU" ] && [ -z "$APATCH" ]; then
   check_magisk_version
 fi

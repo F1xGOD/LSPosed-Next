@@ -1,20 +1,20 @@
-# LSPosed Framework
+# LSPosed Next
 
-[![Build](https://img.shields.io/github/actions/workflow/status/JingMatrix/LSPosed/core.yml?branch=master&event=push&logo=github&label=Build)](https://github.com/JingMatrix/LSPosed/actions/workflows/core.yml?query=event%3Apush+branch%3Amaster+is%3Acompleted) [![Crowdin](https://img.shields.io/badge/Localization-Crowdin-blueviolet?logo=Crowdin)](https://crowdin.com/project/lsposed_jingmatrix) [![Download](https://img.shields.io/github/v/release/JingMatrix/LSPosed?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/JingMatrix/LSPosed/releases/latest) [![Total](https://shields.io/github/downloads/JingMatrix/LSPosed/total?logo=Bookmeter&label=Counts&logoColor=yellow&color=yellow)](https://github.com/JingMatrix/LSPosed/releases)
+[![Build](https://img.shields.io/github/actions/workflow/status/F1xGOD/LSPosed-Next/core.yml?branch=master&event=push&logo=github&label=Build)](https://github.com/F1xGOD/LSPosed-Next/actions/workflows/core.yml?query=event%3Apush+branch%3Amaster+is%3Acompleted) [![Crowdin](https://img.shields.io/badge/Localization-Crowdin-blueviolet?logo=Crowdin)](https://crowdin.com/project/lsposed_jingmatrix) [![Download](https://img.shields.io/github/v/release/F1xGOD/LSPosed-Next?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/F1xGOD/LSPosed-Next/releases/latest) [![Total](https://shields.io/github/downloads/F1xGOD/LSPosed-Next/total?logo=Bookmeter&label=Counts&logoColor=yellow&color=yellow)](https://github.com/F1xGOD/LSPosed-Next/releases)
 
 ## Introduction 
 
-A Zygisk module trying to provide an ART hooking framework which delivers consistent APIs with the OG Xposed, leveraging LSPlant hooking framework.
+A maintained fork of LSPosed that keeps the framework current for new Android releases and KernelSU Next builds, delivering consistent APIs with the OG Xposed through the LSPlant hooking framework.
 
 > Xposed is a framework for modules that can change the behavior of the system and apps without touching any APKs. That's great because it means that modules can work for different versions and even ROMs without any changes (as long as the original code was not changed too much). It's also easy to undo. As all changes are done in the memory, you just need to deactivate the module and reboot to get your original system back. There are many other advantages, but here is just one more: multiple modules can do changes to the same part of the system or app. With modified APKs, you have to choose one. No way to combine them, unless the author builds multiple APKs with different combinations.
 
 ## Supported Versions
 
-Android 8.1 ~ 16
+Android 8.1 ~ 16/17 (latest previews)
 
 ## Install
 
-1. Install Magisk v26+
+1. Install Magisk v26+ or KernelSU Next (v20000+)
 2. [Download](#download) and install LSPosed in Magisk app
 3. Reboot
 4. Open LSPosed manager from notification
@@ -22,14 +22,14 @@ Android 8.1 ~ 16
 
 ## Download
 
-- For stable releases, please go to [Github Releases page](https://github.com/JingMatrix/LSPosed/releases)
-- For canary build, please check [Github Actions](https://github.com/JingMatrix/LSPosed/actions/workflows/core.yml?query=branch%3Amaster)
+- For stable releases, please go to [Github Releases page](https://github.com/F1xGOD/LSPosed-Next/releases)
+- For canary build, please check [Github Actions](https://github.com/F1xGOD/LSPosed-Next/actions/workflows/core.yml?query=branch%3Amaster)
 
 Note: debug builds are only available in Github Actions.
 
 ## Get Help
 **Only bug reports from **THE LATEST DEBUG BUILD** will be accepted.**
-- GitHub issues: [Issues](https://github.com/JingMatrix/LSPosed/issues/)
+- GitHub issues: [Issues](https://github.com/F1xGOD/LSPosed-Next/issues/)
 - (For Chinese speakers) 本项目只接受英语**标题**的issue。如果您不懂英语，请使用[翻译工具](https://www.deepl.com/zh/translator)
 
 ## For Developers
@@ -44,7 +44,7 @@ We use our own module repository. We welcome developers to submit modules to our
 
 ## Community Discussion
 
-[Troubleshooting guide](https://github.com/JingMatrix/LSPosed/issues/123) and [Disscusions](https://github.com/JingMatrix/LSPosed/discussions).
+[Troubleshooting guide](https://github.com/F1xGOD/LSPosed-Next/issues/123) and [Disscusions](https://github.com/F1xGOD/LSPosed-Next/discussions).
 
 ## Translation Contributing
 

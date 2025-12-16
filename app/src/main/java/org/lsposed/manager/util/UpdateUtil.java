@@ -36,6 +36,7 @@ import java.io.IOException;
 import java.time.Instant;
 import java.time.ZoneOffset;
 import java.util.Locale;
+import java.util.regex.Pattern;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -44,9 +45,12 @@ import okhttp3.Response;
 import okio.Okio;
 
 public class UpdateUtil {
+    private static final Pattern ASSET_PATTERN =
+            Pattern.compile("^(.+)-v(.+)-(\\d+)-(riru|zygisk)-(debug|release)\\.zip$");
+
     public static void loadRemoteVersion() {
         var request = new Request.Builder()
-                .url("https://api.github.com/repos/JingMatrix/LSPosed/releases/latest")
+                .url("https://api.github.com/repos/F1xGOD/LSPosed-Next/releases/latest")
                 .addHeader("Accept", "application/vnd.github.v3+json")
                 .build();
         var callback = new Callback() {
@@ -82,10 +86,12 @@ public class UpdateUtil {
     private static void checkAssets(JsonObject assets, String releaseNotes, String api) {
         var pref = App.getPreferences();
         var name = assets.get("name").getAsString();
-        var splitName = name.split("-");
-        if (!splitName[3].equals(api)) return;
+        var matcher = ASSET_PATTERN.matcher(name);
+        if (!matcher.matches()) return;
+        var assetApi = matcher.group(4);
+        if (!assetApi.equals(api)) return;
         pref.edit()
-                .putInt("latest_version", Integer.parseInt(splitName[2]))
+                .putInt("latest_version", Integer.parseInt(matcher.group(3)))
                 .putLong("latest_check", Instant.now().getEpochSecond())
                 .putString("release_notes", releaseNotes)
                 .putString("zip_file", null)

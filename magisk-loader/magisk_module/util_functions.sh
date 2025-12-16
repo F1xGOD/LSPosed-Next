@@ -33,11 +33,45 @@ check_magisk_version() {
   fi
 }
 
+detect_kernel_su_version() {
+  if [ "$KSU" != "true" ] && [ -d "/data/adb/ksu" ]; then
+    KSU=true
+  fi
+  if [ "$KSU" == "true" ]; then
+    if [ -z "$KSU_KERNEL_VER_CODE" ] && [ -f "/data/adb/ksu/version" ]; then
+      KSU_KERNEL_VER_CODE=$(grep_prop versionCode /data/adb/ksu/version)
+    fi
+    if [ -z "$KSU_VER_CODE" ] && [ -n "$KSU_KERNEL_VER_CODE" ]; then
+      KSU_VER_CODE=$KSU_KERNEL_VER_CODE
+    fi
+  fi
+}
+
+check_kernel_su_version() {
+  detect_kernel_su_version
+  if [ "$KSU" == "true" ]; then
+    local version="${KSU_KERNEL_VER_CODE:-$KSU_VER_CODE}"
+    if [ -n "$version" ]; then
+      ui_print "- KernelSU detected (version code: $version)"
+    else
+      ui_print "- KernelSU detected (version code unavailable)"
+    fi
+    if [ -n "$version" ] && [ "$version" -lt 10600 ]; then
+      ui_print "*********************************************************"
+      ui_print "! Please install KernelSU 10600+ or KernelSU Next (20000+)"
+      abort    "*********************************************************"
+    fi
+    if [ -n "$version" ] && [ "$version" -ge 20000 ]; then
+      ui_print "- KernelSU Next build detected; Shamiko compatibility issues are resolved"
+    fi
+  fi
+}
+
 require_new_android() {
   ui_print "*********************************************************"
   ui_print "! Unsupported Android version ${1} (below Oreo MR1)"
   ui_print "! Learn more from our GitHub"
-  [ "$BOOTMODE" == "true" ] && am start -a android.intent.action.VIEW -d https://github.com/JingMatrix/LSPosed/#supported-versions
+  [ "$BOOTMODE" == "true" ] && am start -a android.intent.action.VIEW -d https://github.com/F1xGOD/LSPosed-Next/#supported-versions
   abort    "*********************************************************"
 }
 
@@ -50,7 +84,11 @@ check_android_version() {
 }
 
 check_incompatible_module() {
-  MODULEDIR="$(magisk --path)/.magisk/modules"
+  if [ "$KSU" == "true" ] || [ "$APATCH" == "true" ]; then
+    MODULEDIR="/data/adb/modules"
+  else
+    MODULEDIR="$(magisk --path)/.magisk/modules"
+  fi
   for id in "riru_dreamland" "riru_edxposed" "riru_edxposed_sandhook" "taichi"; do
     if [ -d "$MODULEDIR/$id" ] && [ ! -f "$MODULEDIR/$id/disable" ] && [ ! -f "$MODULEDIR/$id/remove" ]; then
       ui_print "*********************************************************"

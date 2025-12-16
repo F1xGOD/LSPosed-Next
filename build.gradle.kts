@@ -57,14 +57,15 @@ cmaker {
 }
 
 val repo = jgit.repo()
-val commitCount = (repo?.commitCount("refs/remotes/origin/master") ?: 1) + 4200
-val latestTag = repo?.latestTag?.removePrefix("v") ?: "1.0"
+val baseCommitCount = repo?.commitCount("refs/remotes/origin/master") ?: 1
+val verCodeOffset = 20000
+val latestTag = repo?.latestTag?.removePrefix("v")?.takeIf { it.startsWith("2.") } ?: "2.0.0-next"
 
 val injectedPackageName by extra("com.android.shell")
 val injectedPackageUid by extra(2000)
 
 val defaultManagerPackageName by extra("org.lsposed.manager")
-val verCode by extra(commitCount)
+val verCode by extra(baseCommitCount + verCodeOffset)
 val verName by extra(latestTag)
 val androidTargetSdkVersion by extra(36)
 val androidMinSdkVersion by extra(27)

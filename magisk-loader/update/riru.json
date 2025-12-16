@@ -1,6 +1,6 @@
 {
-	"version": "v1.10.0",
-	"versionCode": 7068,
-	"zipUrl": "https://github.com/JingMatrix/LSPosed/releases/download/v1.10.0/LSPosed-v1.10.0-7068-riru-release.zip",
-	"changelog": "https://raw.githubusercontent.com/JingMatrix/LSPosed/master/magisk-loader/update/changelog.md"
+	"version": "v2.0.0-next",
+	"versionCode": 22999,
+	"zipUrl": "https://github.com/F1xGOD/LSPosed-Next/releases/download/v2.0.0-next/LSPosed-Next-v2.0.0-next-22999-riru-release.zip",
+	"changelog": "https://raw.githubusercontent.com/F1xGOD/LSPosed-Next/master/magisk-loader/update/changelog.md"
 }
